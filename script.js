@@ -23,6 +23,7 @@ axios.get(baseUrl + resource, { params }).then((res) => {
 
         container.innerHTML += `
         <div class="card">
+            <span class="pin"><img src="./img/pin.svg" alt=""></span>
             <div class = "img">
                 <img src="${thumbnailUrl}" alt="${title}">         
             </div>
