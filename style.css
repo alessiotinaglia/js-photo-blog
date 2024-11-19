@@ -1,0 +1,16 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Edu TAS Beginner", "sans-serif";
+    background-image: url(img/cork.png);
+}
+
+.container{
+    background-image: url(img/wall.png);
+    opacity: 0.9;
+}
