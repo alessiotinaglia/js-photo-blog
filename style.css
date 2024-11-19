@@ -5,12 +5,59 @@
     box-sizing: border-box;
 }
 
+.debug{
+    border: 1px solid black;
+}
+
+:root {
+    --color-white: #ffffff;
+    --color-bg-color: #d9d9d9;
+    --color-primary: #7c69a4;
+    --color-dark-text: #4e3969;
+    --color-black: #282529;
+    --color-contrast: #fa961a;
+    --color-icon-red: #ea5556;
+    --color-icon-blue: #2871f0;
+}
+
 body{
-    font-family: "Edu TAS Beginner", "sans-serif";
+    font-family: "Edu TAS Beginner", "cursive";
     background-image: url(img/cork.png);
 }
 
-.container{
+header{
     background-image: url(img/wall.png);
-    opacity: 0.9;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    font-size: 4em;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.card {
+    height: 200px;
+    width: calc(33.33%);
+    margin: 30px 20px;
+    background-color: white;
+}
+
+.foto{
+    width: 95%;
+    height: 80%; 
+    background-color: var(--color-contrast);
+    margin: 10px;
+}
+
+.text{
+    width: 100%;
+    height: 20%;
 }
