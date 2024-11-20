@@ -92,13 +92,12 @@ img {
     border-radius: 10px; 
 }
 
-#fo{
-    width: 100px;
-    height: 100px;
+#img-overlay{
+    width: 500px;
+    height: 500px;
 }
 #overlay{
-    background-color: var(--color-black);
-    opacity: 0.5;
+    background-color: rgba(0, 0, 0, 0.5);;
     position: fixed;
     top: 0;
     left: 0;

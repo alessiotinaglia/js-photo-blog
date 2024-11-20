@@ -7,6 +7,8 @@ const resource = "photos";
 
 const params = { _limit: 6 };
 
+
+
 axios.get(baseUrl + resource, { params }).then((res) => {
     const images = res.data;
 
@@ -25,10 +27,10 @@ axios.get(baseUrl + resource, { params }).then((res) => {
         // inserisco nel html la figure che ho creato precedentemente dal html 
         container.innerHTML += `
         <figure class="card" id="${id}">
-            <span class="pin"><img src="./img/pin.svg" alt=""></span>
             <div class = "img">
                 <img src="${thumbnailUrl}" alt="${title}">         
             </div>
+            <span class="pin"><img src="./img/pin.svg" alt=""></span>
             <div class="text">
                 <p>${title}</p>
             <div/>
@@ -42,13 +44,23 @@ axios.get(baseUrl + resource, { params }).then((res) => {
 
 // creo una funzione che al click su una figures esca la foto selezionata 
 function getFigures() {
+    const overlay = document.querySelector('#overlay');
+    const imgOverlay = overlay.querySelector("img");
     const figures = document.querySelectorAll("figure");
+
+    // Funzione per chiudere l'overlay
+    const closeBtn = document.querySelector("#overlay button");
+    closeBtn.addEventListener("click", function () {
+        overlay.classList.add("d-none");
+    });
+
     figures.forEach((figure) => {
         figure.addEventListener("click", function () {
-            console.log(`l'immagine selezionata e la numero : ${figure.id}`);
+            console.log(`L'immagine selezionata è la numero: ${figure.id}`);
             overlay.classList.remove("d-none");
             const img = figure.querySelector("img");
             console.log(img);
-        })
-    })
-} 
+            imgOverlay.src = img.src; // Imposta l'immagine grande nell'overlay
+        });
+    });
+}
