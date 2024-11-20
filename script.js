@@ -37,11 +37,12 @@ axios.get(baseUrl + resource, { params }).then((res) => {
         container.innerHTML += `
         <figure class="card" id="${id}">
             <div class = "image">
-                <img src="${thumbnailUrl}" alt="${title}">         
+                <img src="${thumbnailUrl}" alt="${title}">    
             </div>
             <span class="pin"><img src="./img/pin.svg" alt=""></span>
             <div class="text">
                 <p>${formattedTitle}</p>
+                <i id="icon" class="fa-solid fa-trash-can"></i>  
             <div/>
         </figure>
         `;
