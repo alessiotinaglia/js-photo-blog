@@ -7,13 +7,12 @@ const resource = "photos";
 
 const params = { _limit: 6 };
 
-
-
 axios.get(baseUrl + resource, { params }).then((res) => {
     const images = res.data;
 
     const container = document.querySelector('.container');
 
+    // faccio un for cosi da far girare 6 volte le img
     for (let i = 0; i < images.length; i++) {
         // prendo i valori e li metto come costanti 
         const image = images[i];
@@ -27,7 +26,7 @@ axios.get(baseUrl + resource, { params }).then((res) => {
         // inserisco nel html la figure che ho creato precedentemente dal html 
         container.innerHTML += `
         <figure class="card" id="${id}">
-            <div class = "img">
+            <div class = "image">
                 <img src="${thumbnailUrl}" alt="${title}">         
             </div>
             <span class="pin"><img src="./img/pin.svg" alt=""></span>

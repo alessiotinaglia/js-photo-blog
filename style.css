@@ -1,13 +1,12 @@
+
+/* reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.debug {
-    border: 1px solid black;
-}
-
+/* colori */
 :root {
     --color-white: #ffffff;
     --color-bg-color: #d9d9d9;
@@ -19,11 +18,12 @@
     --color-icon-blue: #2871f0;
 }
 
+/* dettagli tutta la pagina  */
 body {
     font-family: "Edu TAS Beginner", cursive;
     background-image: url(img/cork.png);
 }
-
+/* parte iniziale pagina (intestazione)*/
 header {
     background-image: url(img/wall.png);
     height: 100px;
@@ -34,9 +34,11 @@ header {
 
 h1 {
     font-size: 4em;
-    
 }
+/*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
+/*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
 
+/* parte centrale della pagina (corpo, main)*/
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -57,6 +59,13 @@ h1 {
     border-radius: 10px;
     
 }
+
+.card:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.7);
+    z-index: 100;
+}
+
 .card:hover .pin{
     display: none;
 }
@@ -68,20 +77,15 @@ h1 {
     transform: translate(-50%);
 }
 
-.card:hover {
-    transform: scale(1.1) rotate(5deg);
-    z-index: 100;
-}
-
-.img {
-    height: 80%;
-    padding: 10px; 
-}
-
 img {
     width: 100%;
     border-radius: 10px; 
     object-fit: cover;
+}
+
+.image {
+    height: 80%;
+    padding: 10px; 
 }
 
 .text {
@@ -91,29 +95,54 @@ img {
     background-color: var(--color-white);
     border-radius: 10px; 
 }
+/*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
+/*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
 
-#img-overlay{
-    width: 500px;
-    height: 500px;
-}
+/* sezione overlay */
 #overlay{
-    background-color: rgba(0, 0, 0, 0.5);;
+    background-color: rgba(0, 0, 0, 0.6);;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     justify-content: center;   
     z-index: 1000;
 }
 
+/* img overlay */
+#img-overlay{
+    width: 600px;
+    height: 600px;
+}
+
+/* bottone overlay */
+.button{
+    margin-top: 25px;
+    padding: 15px 35px;
+    border-radius: 25px;
+    cursor: pointer;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    font-size: 1em;
+    transition: transform 0.3s ease;
+}
+
+.button:hover {
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.7);
+    transform: scale(1.2); 
+}
+
+/* non fa visualizzar l'overlay */
 .d-none{
     display: none !important;
 }
 
+/*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
+/*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  *//*  */
 
 /* media query */
 @media screen and (max-width : 768px) {
